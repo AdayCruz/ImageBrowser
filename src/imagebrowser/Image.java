@@ -2,7 +2,7 @@ package imagebrowser;
 
 public abstract class Image {
 
-    public abstract Image getImage();
+    public abstract Bitmap getImage();
     public abstract Image getNext();
     public abstract Image getPrev();
     

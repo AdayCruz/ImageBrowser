@@ -5,35 +5,34 @@ import java.io.File;
 public class RealImage extends Image{
     
     File file;
-    Image image;
+    Bitmap image = new Bitmap();
     
     public RealImage(File file){
         this.file = file;
+        image.setPath(file.getPath());
     }
 
     @Override
-    public Image getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
     @Override
     public Image getNext() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
     @Override
     public Image getPrev() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
     @Override
     public void setNext(Image image) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void setPrev(Image image) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

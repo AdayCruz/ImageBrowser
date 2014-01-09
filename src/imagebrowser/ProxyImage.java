@@ -12,8 +12,9 @@ public class ProxyImage extends Image {
     }
 
     @Override
-    public Image getImage() {
-        return realImage;
+    public Bitmap getImage() {
+        checkLoaded();
+        return realImage.getImage();
     }
 
     @Override
@@ -34,6 +35,11 @@ public class ProxyImage extends Image {
     @Override
     public void setPrev(Image image) {
         this.prev = image;
+    }
+
+    private void checkLoaded() {
+        if (realImage != null) return;
+        realImage = loader.load();
     }
     
 }

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 public class ImageBrowser {
-    String path = "C:\\Users\\Aday\\Pictures\\t";
+    String path = "C:\\Users\\Aday\\Pictures";
     File folder = new File(path);
     File[] list = folder.listFiles();
     
