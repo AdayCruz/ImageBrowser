@@ -1,11 +1,12 @@
 package imagebrowser;
 
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
 public class ImageBrowser {
-    String path = "C:\\Users\\Aday\\Pictures";
+    String path = "C:\\Users\\Aday\\Pictures\\t";
     File folder = new File(path);
     File[] list = folder.listFiles();
     
@@ -16,6 +17,8 @@ public class ImageBrowser {
 
     private void execute() throws IOException {
         Image[] images = linkImages(createImages());
+        ImageViewer viewer = createImageViewer(images[0]);
+        createMainFrame(createCommands(viewer));
     }
 
     private Image[] createImages() throws IOException{
@@ -64,4 +67,22 @@ public class ImageBrowser {
         if(type != null && type.startsWith("image")) return true;
         else return false;
     }
+
+    private ImageViewer createImageViewer(Image image) {
+        ImageViewer viewer = new ConsoleImageViewer();
+        viewer.setImage(image);
+        return viewer;
+    }
+    
+    private MainFrame createMainFrame(ActionListener[] listeners){
+        return new MainFrame(listeners);
+    }
+    
+    private ActionListener[] createCommands(ImageViewer viewer){
+        return new ActionListener[]{
+            new PrevImageCommand(viewer),
+            new NextImageCommand(viewer)
+        };
+    }
+    
 }
