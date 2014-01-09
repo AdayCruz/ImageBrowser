@@ -4,6 +4,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ImageBrowser {
     String path = "C:\\Users\\Aday\\Pictures";
@@ -37,7 +39,12 @@ public class ImageBrowser {
 
             @Override
             public Image load() {
-                return new RealImage(file);
+                try {
+                    return new RealImage(file);
+                } catch (IOException ex) {
+                    Logger.getLogger(ImageBrowser.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return null;
             }
         });
     }

@@ -1,5 +1,7 @@
 package imagebrowser;
 
+import java.awt.image.BufferedImage;
+
 public class ProxyImage extends Image {
     
     private final ImageLoader loader;
@@ -12,7 +14,7 @@ public class ProxyImage extends Image {
     }
 
     @Override
-    public Bitmap getImage() {
+    public BufferedImage getImage() {
         checkLoaded();
         return realImage.getImage();
     }

@@ -1,19 +1,22 @@
 package imagebrowser;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class RealImage extends Image{
     
     File file;
-    Bitmap image = new Bitmap();
+    BufferedImage image = null;
     
-    public RealImage(File file){
+    public RealImage(File file) throws IOException{
         this.file = file;
-        image.setPath(file.getPath());
+        image = ImageIO.read(file);
     }
 
     @Override
-    public Bitmap getImage() {
+    public BufferedImage getImage() {
         return image;
     }
 

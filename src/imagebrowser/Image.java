@@ -1,8 +1,10 @@
 package imagebrowser;
 
+import java.awt.image.BufferedImage;
+
 public abstract class Image {
 
-    public abstract Bitmap getImage();
+    public abstract BufferedImage getImage();
     public abstract Image getNext();
     public abstract Image getPrev();
     
