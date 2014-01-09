@@ -2,12 +2,11 @@ package imagebrowser;
 
 public abstract class Image {
 
-    void setNext(Image next) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void setPrev(Image prev) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public abstract Image getImage();
+    public abstract Image getNext();
+    public abstract Image getPrev();
+    
+    public abstract void setNext(Image next);
+    public abstract void setPrev(Image prev);
 
 }
