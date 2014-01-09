@@ -27,13 +27,13 @@ public class RealImage extends Image{
     }
 
     @Override
-    public void setNext(Image next) {
+    public void setNext(Image image) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void setPrev(Image prev) {
+    public void setPrev(Image image) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

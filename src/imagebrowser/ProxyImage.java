@@ -35,5 +35,5 @@ public class ProxyImage extends Image {
     public void setPrev(Image image) {
         this.prev = image;
     }
-
+    
 }

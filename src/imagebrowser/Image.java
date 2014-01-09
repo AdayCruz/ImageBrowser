@@ -6,7 +6,7 @@ public abstract class Image {
     public abstract Image getNext();
     public abstract Image getPrev();
     
-    public abstract void setNext(Image next);
-    public abstract void setPrev(Image prev);
+    public abstract void setNext(Image image);
+    public abstract void setPrev(Image image);
 
 }

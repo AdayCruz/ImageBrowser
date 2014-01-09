@@ -47,7 +47,7 @@ public class ImageBrowser {
         for (int i = 0; i < images.length; i++) {
             Image image = images[i];
             Image next = images[(i + 1) % images.length];
-            Image prev = images[(i + images.length) % images.length];
+            Image prev = images[(i -1 + images.length) % images.length];
             image.setNext(next);
             image.setPrev(prev);
         }
