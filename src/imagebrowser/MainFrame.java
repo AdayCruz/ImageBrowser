@@ -2,6 +2,7 @@ package imagebrowser;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
@@ -22,5 +23,11 @@ public class MainFrame extends JFrame{
     private void createComponents() {
         this.add(createButton("Prev"));
         this.add(createButton("Next"));
+    }
+
+    private JButton createButton(String title) {
+        JButton button = new JButton(title);
+        button.addActionListener(listeners[index++]);
+        return button;
     }
 }
