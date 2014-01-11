@@ -1,5 +1,7 @@
 package imagebrowser;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -12,6 +14,8 @@ public class GraphicalImageViewer extends ImageViewer{
     int x2;
     int x;
     private JPanel panel;
+    private JPanel prevPanel = new JPanel();
+    private JPanel nextPanel = new JPanel();
     
     @Override
     public void refresh() {
@@ -29,10 +33,16 @@ public class GraphicalImageViewer extends ImageViewer{
 
     public void setPanel(JPanel panel) {
         this.panel = panel;
+        prevPanel.setBackground(Color.lightGray);
+        nextPanel.setBackground(Color.lightGray);
+        this.panel.add(prevPanel, BorderLayout.WEST);
+        this.panel.add(nextPanel, BorderLayout.EAST);
         this.panel.addMouseListener(new MouseListener() {
 
             @Override
             public void mouseClicked(MouseEvent me) {
+                setImage(getImage().getNext());
+                getImage().setNext(getImage().getNext());
             }
 
             @Override
@@ -50,6 +60,8 @@ public class GraphicalImageViewer extends ImageViewer{
                     setImage(getImage().getPrev());
                     getImage().setPrev(getImage().getPrev());
                 }
+                prevPanel.setBackground(Color.lightGray);
+                nextPanel.setBackground(Color.lightGray);
             }
 
             @Override
@@ -66,6 +78,13 @@ public class GraphicalImageViewer extends ImageViewer{
             public void mouseDragged(MouseEvent me) {
                 x2=me.getX();
                 x=x2-x1;
+                if (x1-x2>getImage().getImage().getWidth()/2){
+                    nextPanel.setBackground(Color.DARK_GRAY);
+                }else nextPanel.setBackground(Color.lightGray);
+                    
+                if(x2-x1>getImage().getImage().getWidth()/2){
+                    prevPanel.setBackground(Color.DARK_GRAY);
+                }else prevPanel.setBackground(Color.lightGray);
             }
 
             @Override

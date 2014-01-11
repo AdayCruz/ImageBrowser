@@ -22,7 +22,7 @@ public class MainFrame extends JFrame{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(800, 600);
         this.setLayout(new BorderLayout());
-        this.add(panel);
+        this.add(panel, BorderLayout.CENTER);
         panel.setLayout(new BorderLayout());
         this.viewer.setPanel(panel);
         this.viewer.refresh();
