@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ImageBrowser {
-    String path = "C:\\Users\\Aday\\Pictures";
+    String path = "C:\\Users\\Aday\\Pictures\\t";
     File folder = new File(path);
     File[] list = folder.listFiles();
     
@@ -20,7 +20,7 @@ public class ImageBrowser {
     private void execute() throws IOException {
         Image[] images = linkImages(createImages());
         ImageViewer viewer = createImageViewer(images[0]);
-        createMainFrame(createCommands(viewer));
+        createMainFrame(createCommands(viewer),viewer);
     }
 
     private Image[] createImages() throws IOException{
@@ -76,13 +76,13 @@ public class ImageBrowser {
     }
 
     private ImageViewer createImageViewer(Image image) {
-        ImageViewer viewer = new ConsoleImageViewer();
+        ImageViewer viewer = new GraphicalImageViewer();
         viewer.setImage(image);
         return viewer;
     }
     
-    private MainFrame createMainFrame(ActionListener[] listeners){
-        return new MainFrame(listeners);
+    private MainFrame createMainFrame(ActionListener[] listeners,ImageViewer viewer){
+        return new MainFrame(listeners,viewer);
     }
     
     private ActionListener[] createCommands(ImageViewer viewer){
