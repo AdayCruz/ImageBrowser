@@ -9,7 +9,6 @@ public class NextImageCommand implements Command{
     public NextImageCommand(ImageViewer viewer) {
         this.viewer = viewer;
     }
-    
 
     @Override
     public void execute() {

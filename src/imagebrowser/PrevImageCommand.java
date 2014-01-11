@@ -9,7 +9,6 @@ public class PrevImageCommand implements Command{
     public PrevImageCommand(ImageViewer viewer) {
         this.viewer = viewer;
     }
-    
 
     @Override
     public void execute() {
