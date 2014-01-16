@@ -1,4 +1,4 @@
-package imagebrowser;
+package Main;
 
 import View.ImageViewer;
 import View.GraphicalImageViewer;
