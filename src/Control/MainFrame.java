@@ -1,5 +1,7 @@
-package imagebrowser;
+package Control;
 
+import View.GraphicalImageViewer;
+import View.ImageViewer;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;

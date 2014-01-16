@@ -1,4 +1,4 @@
-package imagebrowser;
+package Model;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

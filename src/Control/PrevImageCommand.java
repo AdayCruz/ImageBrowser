@@ -1,5 +1,6 @@
-package imagebrowser;
+package Control;
 
+import View.ImageViewer;
 import java.awt.event.ActionEvent;
 
 public class PrevImageCommand implements Command{

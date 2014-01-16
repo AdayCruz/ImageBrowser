@@ -1,4 +1,4 @@
-package imagebrowser;
+package View;
 
 public class ConsoleImageViewer extends ImageViewer {
 

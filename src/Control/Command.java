@@ -1,4 +1,4 @@
-package imagebrowser;
+package Control;
 
 import java.awt.event.ActionListener;
 

@@ -1,4 +1,4 @@
-package imagebrowser;
+package Model;
 
 public interface ImageLoader {
 
